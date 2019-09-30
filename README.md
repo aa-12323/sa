@@ -3,9 +3,9 @@ This is a project trying to find out satelite alignment signals in the DES's dat
 Please see arXiv:1605.01065 and arXiv:1704.06273v2 for the papers I am reading. 
 
 ## Table of Content
-### phi_e_sat.ipynb
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/phi_e_sat.ipynb">phi_e_sat.ipynb<\a>
 Phi_sat and e calculations and plots.
-### model_averaging.ipynb
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/model_averaging.ipynb">model_averaging.ipynb<\a>
 Choosing predictors
 ## Journal
 ### 2019.9.28
@@ -13,6 +13,7 @@ Add phi calculation
 ### 2019.9.29
 Add e calculation\
 Start linear regression\
+Start listing predictors\
 Add cluster e calculation
 
 
@@ -22,3 +23,5 @@ Add cluster e calculation
 ### Predictor relations:
 
 ### What are the two features in phi__sat histogram?
+
+### How does 2-based coordinate system work?
