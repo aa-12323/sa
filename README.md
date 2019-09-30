@@ -1,6 +1,8 @@
 # satelite_alignment 
 This is a project trying to find out satelite alignment signals in the DES's data. 
 Please see arXiv:1605.01065 and arXiv:1704.06273v2 for the papers I am reading. 
+<br>
+The other part of this project, the measurement of central alignment, can be found <a href="https://github.com/alduto/intrinsic_alignments">here</a>
 
 ## Table of Content
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/phi_e_sat.ipynb">phi_e_sat.ipynb</a>
