@@ -7,17 +7,11 @@ Please see arXiv:1605.01065 and arXiv:1704.06273v2 for the papers I am reading.
 Phi_sat and e calculations and plots.
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/model_averaging.ipynb">model_averaging.ipynb</a>
 Predictor selection.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/header.ipynb">
-header.ipynb
-</a>
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/header.ipynb"> header.ipynb </a>
 Header file to import all common packages.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/data_marshalling.ipynb">
-data_marshalling.ipynb
-</a>
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/data_marshalling.ipynb"> data_marshalling.ipynb </a>
 Data cleaning and column adding.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/properties.ipynb">
-properties.ipynb
-</a>
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/properties.ipynb"> properties.ipynb </a>
 A file to lookup columns in the catalogs.
 ## Journal
 ### 2019.9.28
