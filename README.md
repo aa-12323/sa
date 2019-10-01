@@ -27,6 +27,8 @@ Add cluster e calculation
 ### 2019.9.30
 Add weighted phi calculation and e1 e2 statistics\
 Add comments to the code
+### 2019.10.1
+Start to write 2pt functions
 
 ## Questions
 ### What is PFREE?
@@ -38,6 +40,8 @@ Currently we are not sure.
 
 ### How does 2-based coordinate system work?
 Check spin-2 groups.
+
+### How does the spherical geometry equation in Alexs's code work?
 
 
 ## TODO
