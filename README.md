@@ -28,7 +28,14 @@ Add cluster e calculation
 Add weighted phi calculation and e1 e2 statistics\
 Add comments to the code
 ### 2019.10.1
-Start to write 2pt functions
+Start to write 2pt functions\
+Switch to non-volume-limited catalogues. Got the same result in phi, but both e+ and ex are not zero.
+### 2019.10.2
+Getting numbers from physical distance treecorr
+### 2019.10.4
+Produced the correlation function of physical distance
+### 2019.10.5
+Modified treecorr code in treecorr__cross.ipynb. Got some pathological plots.
 
 ## Questions
 ### What is PFREE?
@@ -41,10 +48,15 @@ Currently we are not sure.
 ### How does 2-based coordinate system work?
 Check spin-2 groups.
 
-### How does the spherical geometry equation in Alexs's code work?
-
+### How does the spherical geometry equation in Alex's code work?
+Check astropy package.
 
 ## TODO
 1. 2pt functions of tangential shear (linear bin, both distance and normalized distance)
   R200=1.5R(lambda). 
 2. Linear regression
+3. Mass map
+4. Select the red shift range and see what happends in high redshift
+5. Make sure Alex and I are using the same set.
+6. Change treecorr function aggregation
+7. Make notebooks with vollim catalogs
