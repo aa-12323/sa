@@ -36,6 +36,8 @@ Getting numbers from physical distance treecorr
 Produced the correlation function of physical distance
 ### 2019.10.5
 Modified treecorr code in treecorr__cross.ipynb. Got some pathological plots.
+### 2019.10.6
+Correct the mistake of not masking the right elipticity in the data processing notebook.
 
 ## Questions
 ### What is PFREE?
