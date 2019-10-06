@@ -16,6 +16,10 @@ Header file to import all common packages.
 Data cleaning and column adding.
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/properties.ipynb"> properties.ipynb </a>
 A file to lookup columns in the catalogs.
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/treecorr.ipynb"> treecorr.ipynb </a>
+Sum of 2pt function of all individual clusters.
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/treecorr_cross.ipynb"> treecorr_cross.ipynb </a>
+Weighted average of all 2pt function.
 ## Journal
 ### 2019.9.28
 Add phi calculation
@@ -37,7 +41,8 @@ Produced the correlation function of physical distance
 ### 2019.10.5
 Modified treecorr code in treecorr__cross.ipynb. Got some pathological plots.
 ### 2019.10.6
-Correct the mistake of not masking the right elipticity in the data processing notebook.
+Corrected the mistake of not masking the right elipticity in the data processing notebook.\
+Got some less pathological 2pt function.
 
 ## Questions
 ### What is PFREE?
