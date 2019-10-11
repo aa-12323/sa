@@ -43,6 +43,11 @@ Modified treecorr code in treecorr__cross.ipynb. Got some pathological plots.
 ### 2019.10.6
 Corrected the mistake of not masking the right elipticity in the data processing notebook.\
 Got some less pathological 2pt function.
+### 2019.10.10
+Add z-selection and vollim selection\
+Changed folder structure to sync all code for high/low/all z and vollim and not vollim
+### 2019.10.11
+Get all the statistics for z-selection and vollim selection
 
 ## Questions
 ### What is PFREE?
@@ -58,12 +63,13 @@ Check spin-2 groups.
 ### How does the spherical geometry equation in Alex's code work?
 Check astropy package.
 
+### How to get R200m?
+
 ## TODO
 1. 2pt functions of tangential shear (linear bin, both distance and normalized distance)
   R200=1.5R(lambda). 
 2. Linear regression
-3. Mass map
-4. Select the red shift range and see what happends in high redshift
+3. Read DES IA paper
+4. Read SDSS IA paper
 5. Make sure Alex and I are using the same set.
-6. Change treecorr function aggregation
-7. Make notebooks with vollim catalogs
+
