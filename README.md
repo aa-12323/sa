@@ -47,7 +47,9 @@ Got some less pathological 2pt function.
 Add z-selection and vollim selection\
 Changed folder structure to sync all code for high/low/all z and vollim and not vollim
 ### 2019.10.11
-Get all the statistics for z-selection and vollim selection
+Get all the statistics for z-selection and vollim selection\
+Fixed the wrong way to use weight in histograms\
+Find out that 22.5 and 67.5 bumps have a tight RA distribution
 
 ## Questions
 ### What is PFREE?
@@ -72,4 +74,9 @@ Check astropy package.
 3. Read DES IA paper
 4. Read SDSS IA paper
 5. Make sure Alex and I are using the same set.
+6. add prefactor
+7. redo the plot with smaller bin
+8. see what's wrong with 22.5 and 67.5
+
+
 
