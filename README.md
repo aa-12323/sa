@@ -77,6 +77,6 @@ Check astropy package.
 6. add prefactor
 7. redo the plot with smaller bin
 8. see what's wrong with 22.5 and 67.5
-
+9. rewrite the code with papermill so it takes arguments
 
 
