@@ -53,6 +53,8 @@ Find out that 22.5 and 67.5 bumps have a tight RA distribution
 ### 2019.10.18
 Add Papermill parametrization\
 Add code for normalized R
+### 2019.10.22
+Finish parametrization, changed to log bin and get a signal at the small seperation
 
 ## Questions
 ### What is PFREE?
@@ -69,10 +71,9 @@ Check spin-2 groups.
 Check astropy package.
 
 ### How to get R200m?
+Normalize with R__Lambda
 
 ## TODO
-1. 2pt functions of tangential shear (linear bin, both distance and normalized distance)
-  R200=1.5R(lambda). 
 2. Linear regression
 3. Read DES IA paper
 4. Read SDSS IA paper
