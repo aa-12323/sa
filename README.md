@@ -50,6 +50,9 @@ Changed folder structure to sync all code for high/low/all z and vollim and not 
 Get all the statistics for z-selection and vollim selection\
 Fixed the wrong way to use weight in histograms\
 Find out that 22.5 and 67.5 bumps have a tight RA distribution
+### 2019.10.18
+Add Papermill parametrization\
+Add code for normalized R
 
 ## Questions
 ### What is PFREE?
@@ -79,4 +82,5 @@ Check astropy package.
 8. see what's wrong with 22.5 and 67.5
 9. rewrite the code with papermill so it takes arguments
 
+CAMB
 
