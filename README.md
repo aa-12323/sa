@@ -77,10 +77,5 @@ Check astropy package.
 3. Read DES IA paper
 4. Read SDSS IA paper
 5. Make sure Alex and I are using the same set.
-6. add prefactor
 7. redo the plot with smaller bin
-8. see what's wrong with 22.5 and 67.5
-9. rewrite the code with papermill so it takes arguments
-
-CAMB
 
