@@ -6,20 +6,24 @@ Please see arXiv:1605.01065 and arXiv:1704.06273v2 for the papers I am reading.
 The other part of this project, the measurement of central alignment, can be found <a href="https://github.com/alduto/intrinsic_alignments">here</a>.
 
 ## Table of Content
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/phi_e_sat.ipynb">phi_e_sat.ipynb</a>
+
+### <a href="https://github.com/zchvsre/sa/tree/master/lib/src">/lib/src</a>
+The source notebooks with empty parameters. The notebooks in output is acquired by run these notebooks with parameters.
+### <a href="https://github.com/zchvsre/sa/tree/master/lib/output">/lib/output<\a>
+The output notebooks organized by [measurement]/[volume]/[z_range]
+
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/phi_e_sat.ipynb">phi_e_sat.ipynb</a>
 Phi_sat and e calculations and plots.
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/model_averaging.ipynb">model_averaging.ipynb</a>
 Predictor selection.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/header.ipynb"> header.ipynb </a>
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/header.py"> header.ipynb </a>
 Header file to import all common packages.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/data_marshalling.ipynb"> data_marshalling.ipynb </a>
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/data_marshalling.ipynb"> data_marshalling.ipynb </a>
 Data cleaning and column adding.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/properties.ipynb"> properties.ipynb </a>
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/properties.ipynb"> properties.ipynb </a>
 A file to lookup columns in the catalogs.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/treecorr.ipynb"> treecorr.ipynb </a>
-Sum of 2pt function of all individual clusters.
-### <a href="https://github.com/zchvsre/sa/blob/master/lib/treecorr_cross.ipynb"> treecorr_cross.ipynb </a>
-Weighted average of all 2pt function.
+### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/treecorr_cross.ipynb"> treecorr.ipynb </a>
+Treecorr by summing xi and counts in each cluster.
 ## Journal
 ### 2019.9.28
 Add phi calculation
