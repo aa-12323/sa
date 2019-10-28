@@ -55,6 +55,13 @@ Add Papermill parametrization\
 Add code for normalized R
 ### 2019.10.22
 Finish parametrization, changed to log bin and get a signal at the small seperation
+### 2019.10.25
+Fixed the elipticity correction in im3, got something weird around 0
+### 2019.10.26
+Fixed the bumps in phi caused by sorting the phi column and using e1/e1 in pa calculation
+### 2019.10.27
+Fixed the reference axis in measuring position angle, cofirmed that we got a radial alignment at small seperations
+
 
 ## Questions
 ### What is PFREE?
@@ -79,4 +86,3 @@ Normalize with R__Lambda
 4. Read SDSS IA paper
 5. Make sure Alex and I are using the same set.
 7. redo the plot with smaller bin
-
