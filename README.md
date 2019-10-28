@@ -9,7 +9,7 @@ The other part of this project, the measurement of central alignment, can be fou
 
 ### <a href="https://github.com/zchvsre/sa/tree/master/lib/src">/lib/src</a>
 The source notebooks with empty parameters. The notebooks in output is acquired by run these notebooks with parameters.
-### <a href="https://github.com/zchvsre/sa/tree/master/lib/output">/lib/output<\a>
+### <a href="https://github.com/zchvsre/sa/tree/master/lib/output">/lib/output</a>
 The output notebooks organized by [measurement]/[volume]/[z_range]
 
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/phi_e_sat.ipynb">phi_e_sat.ipynb</a>
@@ -23,7 +23,7 @@ Data cleaning and column adding.
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/properties.ipynb"> properties.ipynb </a>
 A file to lookup columns in the catalogs.
 ### <a href="https://github.com/zchvsre/sa/blob/master/lib/src/treecorr_cross.ipynb"> treecorr.ipynb </a>
-Treecorr by summing xi and counts in each cluster.
+2pt function by summing xi and counts in each cluster.
 ## Journal
 ### 2019.9.28
 Add phi calculation
