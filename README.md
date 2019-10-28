@@ -73,7 +73,8 @@ PFREE is just the probability that the galaxy belongs to the foreground clusters
 ### What are the predictors in mcal catalog?
 
 ### What are the two features in phi_sat histogram?
-Currently we are not sure.
+Currently we are not sure.\
+Update: I fathered those two bumps with my exceptional bug-writing skills.
 
 ### How does 2-based coordinate system work?
 Check spin-2 groups.
@@ -84,9 +85,10 @@ Check astropy package.
 ### How to get R200m?
 Normalize with R__Lambda
 
+### What is the probelm with im3 2pt functions?
+
 ## TODO
 2. Linear regression
 3. Read DES IA paper
 4. Read SDSS IA paper
-5. Make sure Alex and I are using the same set.
 7. redo the plot with smaller bin
