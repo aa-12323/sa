@@ -1,4 +1,3 @@
-# satelite_alignment 
 This is a project trying to find out satelite alignment signals in the DES's data. 
 Please see arXiv:1605.01065 and arXiv:1704.06273v2 for the papers I am reading. 
 <br>
@@ -65,7 +64,9 @@ Fixed the elipticity correction in im3, got something weird around 0
 Fixed the bumps in phi caused by sorting the phi column and using e1/e1 in pa calculation
 ### 2019.10.27
 Fixed the reference axis in measuring position angle, cofirmed that we got a radial alignment at small seperations
-
+### 2019.10.28
+Fixed the glitch that is caused by not filling np.empty properly\
+Fixed the center theta in phi calculation
 
 ## Questions
 ### What is PFREE?
@@ -87,8 +88,12 @@ Normalize with R__Lambda
 
 ### What is the probelm with im3 2pt functions?
 
+### How to make foreground and background galaxies?
+Cut out R and cut red_ shift
+ 
+
 ## TODO
+1. Make foreground and background calculations to account for systematics
 2. Linear regression
 3. Read DES IA paper
 4. Read SDSS IA paper
-7. redo the plot with smaller bin
