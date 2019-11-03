@@ -67,6 +67,16 @@ Fixed the reference axis in measuring position angle, cofirmed that we got a rad
 ### 2019.10.28
 Fixed the glitch that is caused by not filling np.empty properly\
 Fixed the center theta in phi calculation
+### 2019.10.30
+Start making ubermember catalog for systematic detection\
+### 2019.10.30
+Start fixing members associated with multiple clusters\
+### 2019.11.1
+Making new catalogs with multilple associated clusters\
+### 2019.11.2
+Made new ubermember catalog
+### 2019.11.3
+Add quantile comparison of 2pt function
 
 ## Questions
 ### What is PFREE?
@@ -91,9 +101,17 @@ Normalize with R__Lambda
 ### How to make foreground and background galaxies?
 Cut out R and cut red_ shift
  
+### Should I make empty cluster cut?
+
+### selection effect and errors in redmagic
+Shape bias is always multiplicative
+
+
 
 ## TODO
 1. Make foreground and background calculations to account for systematics
 2. Linear regression
 3. Read DES IA paper
 4. Read SDSS IA paper
+5. z and richness 
+6. fix empty cluster dropping
