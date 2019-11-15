@@ -77,6 +77,8 @@ Making new catalogs with multilple associated clusters\
 Made new ubermember catalog
 ### 2019.11.3
 Add quantile comparison of 2pt function
+### 2019.11.14
+Made background and foreground 2pt. got unexpected results
 
 ## Questions
 ### What is PFREE?
@@ -106,12 +108,9 @@ Cut out R and cut red_ shift
 ### selection effect and errors in redmagic
 Shape bias is always multiplicative
 
-
+### are there other catalogs?
 
 ## TODO
-1. Make foreground and background calculations to account for systematics
 2. Linear regression
 3. Read DES IA paper
 4. Read SDSS IA paper
-5. z and richness 
-6. fix empty cluster dropping

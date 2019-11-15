@@ -11,3 +11,8 @@ def get_unique_center_for_cluster(cluster,member=0):
         raise TypeError
     
     return(centers)
+
+def get_cluster_for_member(clusters,member):
+    cluster_id=member[('All','MEM_MATCH_ID')]
+    cluster=clusters.loc[cluster_id]
+    return(cluster)

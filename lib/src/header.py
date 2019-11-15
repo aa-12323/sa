@@ -4,6 +4,8 @@ import astropy as ap
 from tqdm.notebook import trange, tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy import stats
+
 sns.set()
 
 from astropy.coordinates import SkyCoord  # High-level coordinates
