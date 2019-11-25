@@ -43,4 +43,4 @@ else:
 clusters=pd.read_pickle('/home/cz136/project/sa/data/{}/{}/clusters{}.pkl'.format(shape_cat,vol_lim,z)) 
 shapes=pd.read_pickle('/home/cz136/project/sa/data/{}/{}/shapes{}.pkl'.format(shape_cat,vol_lim,z)) 
 random=pd.read_pickle('/home/cz136/project/sa/data/{}/{}/random.pkl'.format(shape_cat,vol_lim))
-
+shape_BPZ=pd.read_pickle("/home/cz136/project/sa/data/shape_BPZ.pkl")

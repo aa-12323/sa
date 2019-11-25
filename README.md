@@ -79,6 +79,12 @@ Made new ubermember catalog
 Add quantile comparison of 2pt function
 ### 2019.11.14
 Made background and foreground 2pt. got unexpected results
+### 2019.11.15
+Get the fraction of redmapper clusters used in cluster lensing 
+### 2019.11.23
+Change the z_frac code to be vlim\
+Wrote code to calculate gammaT\
+The code does not work because of memory leakage
 
 ## Questions
 ### What is PFREE?
