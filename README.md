@@ -85,6 +85,10 @@ Get the fraction of redmapper clusters used in cluster lensing
 Change the z_frac code to be vlim\
 Wrote code to calculate gammaT\
 The code does not work because of memory leakage
+### 2019.11.25
+Solved the memery leaking problem by use gc.collect()\
+The calculation of red satellite in lensing source is not right\
+Plotted the impact of satellite alignment on weak lensing mass calibration
 
 ## Questions
 ### What is PFREE?
