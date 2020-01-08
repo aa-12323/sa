@@ -1,10 +1,8 @@
 import treecorr
 
 
-def get_ng(cluster,mode1,mode2,source=False):
+def get_ng(cluster,mode1,mode2):
     if mode2=="abs":
-        if source==True:
-            UPPER_BOUND=10
         UPPER_BOUND=np.max(shapes[('All','R')])
         distance=('All','angR')
         
@@ -23,11 +21,8 @@ def get_ng(cluster,mode1,mode2,source=False):
             
 
             
-            if source==True:
-                sats=members
                 
-            else: 
-                sats=members[members['All','MEM_MATCH_ID']==cen_mat_id]
+            sats=members[members['All','MEM_MATCH_ID']==cen_mat_id]
                          
             sats=sats[sats.index!=cen_id]
             return (sats)
@@ -44,9 +39,6 @@ def get_ng(cluster,mode1,mode2,source=False):
     cen=get_cluster_cen(cluster)
     sats=get_cluster_sats(cluster)
     
-    if source==True:
-        sats=sats[(sats[('All','mean_z')]-cen[('All','ZRED2')])>=0.1]
-
 
     sats_e1=sats[('All','e1')].to_numpy()
     sats_e2=sats[('All','e2')].to_numpy()
@@ -87,12 +79,8 @@ def get_ng(cluster,mode1,mode2,source=False):
                                  ra = cen_ra, dec = cen_dec, r=cen_angr,
                                  ra_units='deg', dec_units='deg')
     
-    if source==True:
-        MINSEP=0.05
-        BINSLOP=0.1
-    else:
-        MINSEP=0.01
-        BINSLOP=0
+    MINSEP=0.01
+    BINSLOP=0
         
 
     ng = treecorr.NGCorrelation(nbins=NBINS, min_sep=MINSEP, max_sep=UPPER_BOUND, bin_slop=BINSLOP,
@@ -161,11 +149,14 @@ def get_sigma(ng_list):
     return(np.sqrt(N)*np.std(jk_xi_array,axis=0))
 
 
-def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,woRed=False):
+def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,foreback,woRed=False):
     clusters_z_masked=clusters[(clusters[('All','All','Z_LAMBDA')]>=z_lower)&(clusters[('All','All','Z_LAMBDA')]<=z_upper)]
+    clusters_lambda_masked=clusters[(clusters[('All','All','LAMBDA_CHISQ')]>=lambda_lower)&(clusters[('All','All','LAMBDA_CHISQ')]<=lambda_upper)]
     
     if woRed==True:
         sources=sources[woRedMask]
+    
+    print("The number of sources is {}".format(len(sources)))
     
     center_id=clusters_z_masked[('Alt','Alt1','ID_CENT')]
     centers=members.loc[center_id]
@@ -205,8 +196,14 @@ def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,woR
     cen=centers
     sats=members
     
-    sats=sats[(sats[('All','mean_z')]-z_upper)>=0.1]
-
+    if foreback=="back":
+        sats=sats[(sats[('All','mean_z')]-z_upper)>=0.1]
+        print("The number of background sources is {}".format(len(sats)))
+    elif foreback=="fore":
+        sats=sats[(z_lower-sats[('All','mean_z')])>=0.1]
+        print("Calculating foreground sources")
+        print(sats[('All','mean_z')].mean())
+        print("The number of foreground sources is {}".format(len(sats)))
 
     sats_e1=sats[('All','e1')].to_numpy()
     sats_e2=sats[('All','e2')].to_numpy()
@@ -247,7 +244,7 @@ def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,woR
                                  ra = cen_ra, dec = cen_dec, r=cen_angr,
                                  ra_units='deg', dec_units='deg')
     
-    MINSEP=0.05
+    MINSEP=0.1
     BINSLOP=0.1
         
 

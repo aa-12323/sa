@@ -89,6 +89,8 @@ The code does not work because of memory leakage
 Solved the memery leaking problem by use gc.collect()\
 The calculation of red satellite in lensing source is not right\
 Plotted the impact of satellite alignment on weak lensing mass calibration
+### 2019.12.16
+The background and foreground catalogues are not correct. Starting to remake them.
 
 ## Questions
 ### What is PFREE?
@@ -120,7 +122,11 @@ Shape bias is always multiplicative
 
 ### are there other catalogs?
 
+### What's a good distance measurement to use for seperation between two galaxies?
+
 ## TODO
+1. Test treecorr jackknife
 2. Linear regression
 3. Read DES IA paper
 4. Read SDSS IA paper
+
