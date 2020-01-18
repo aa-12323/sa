@@ -130,6 +130,8 @@ def get_mean(ng_list):
     sum_npairs=np.sum(ng_list[:,3,:],axis=0)
     return(sum_xi_cross/sum_npairs,sum_meanlogr/sum_npairs)
 
+
+#jackknife variance
 def get_sigma(ng_list):
     xi_array=ng_list[:,0,:]
     npairs_array=ng_list[:,3,:]
@@ -146,9 +148,9 @@ def get_sigma(ng_list):
         drop_1_npairs=np.delete(npairs_array,i,axis=0)
         jk_xi_array[i,:]=get_xi(drop_1_xi,drop_1_npairs)
         
-    return(np.sqrt(N)*np.std(jk_xi_array,axis=0))
+    return(np.sqrt(N-1)*np.std(jk_xi_array,axis=0))
 
-
+#correlation function for one cluster with seperate source catalogs 
 def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,foreback,woRed=False):
     clusters_z_masked=clusters[(clusters[('All','All','Z_LAMBDA')]>=z_lower)&(clusters[('All','All','Z_LAMBDA')]<=z_upper)]
     clusters_lambda_masked=clusters[(clusters[('All','All','LAMBDA_CHISQ')]>=lambda_lower)&(clusters[('All','All','LAMBDA_CHISQ')]<=lambda_upper)]
@@ -197,13 +199,13 @@ def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,for
     sats=members
     
     if foreback=="back":
-        print("Calculating background sources")
         sats=sats[(sats[('All','mean_z')]-z_upper)>=0.1]
+        print("The number of background sources is {}".format(len(sats)))
     elif foreback=="fore":
         sats=sats[(z_lower-sats[('All','mean_z')])>=0.1]
         print("Calculating foreground sources")
         print(sats[('All','mean_z')].mean())
-        print(len(sats))
+        print("The number of foreground sources is {}".format(len(sats)))
 
     sats_e1=sats[('All','e1')].to_numpy()
     sats_e2=sats[('All','e2')].to_numpy()
