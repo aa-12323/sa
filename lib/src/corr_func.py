@@ -1,6 +1,6 @@
 import treecorr
 
-
+#get_NG for a single cluster
 def get_ng(cluster,mode1,mode2):
     if mode2=="abs":
         UPPER_BOUND=np.max(shapes[('All','R')])
@@ -26,6 +26,8 @@ def get_ng(cluster,mode1,mode2):
                          
             sats=sats[sats.index!=cen_id]
             return (sats)
+        
+#NG from random clusters
     elif mode1=='r':
         def get_cluster_sats(cluster):
             return(shapes)
@@ -151,10 +153,41 @@ def get_sigma(ng_list):
             drop_1_npairs=np.delete(npairs_array,i,axis=0)
             jk_xi_array[i,:]=get_xi(drop_1_xi,drop_1_npairs)
 
-            mean=np.mean(jk_xi_array,axis=0)
-            jk_var=(1-1/N)*np.sum(jk_xi_array-mean,axis=0)**2
-            jk_sig=np.sqrt(jk_var)
+        mean=np.mean(jk_xi_array,axis=0)
+        jk_var=(1-1/N)*np.sum((jk_xi_array-mean)**2,axis=0)
+        jk_sig=np.sqrt(jk_var)
         return(jk_sig)
+    else:
+        return(0*np.ones(NBINS))
+    
+    
+def get_cov(ng_list):
+    
+    xi_array=ng_list[:,0,:]
+    npairs_array=ng_list[:,3,:]
+    
+    N=len(xi_array)
+    
+    if N!=0:
+    
+        jk_xi_array=np.empty([N,NBINS])
+
+        def get_xi(drop_1_xi,drop_1_npairs):
+            return(np.sum(drop_1_xi,axis=0)/np.sum(drop_1_npairs,axis=0))
+
+        for i in range(N):
+            drop_1_xi=np.delete(xi_array,i,axis=0)
+            drop_1_npairs=np.delete(npairs_array,i,axis=0)
+            jk_xi_array[i,:]=get_xi(drop_1_xi,drop_1_npairs)
+
+            mean=np.mean(jk_xi_array,axis=0)
+            
+        jk_cov=np.empty([NBINS,NBINS])
+        
+        for i in range(NBINS):
+            for j in range(NBINS):
+                jk_cov[i,j]=(1-1/N)*np.sum((jk_xi_array[:,i]-mean[i])*(jk_xi_array[:,j]-mean[j]))
+        return(jk_cov)
     else:
         return(0*np.ones(NBINS))
 
