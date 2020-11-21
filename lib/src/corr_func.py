@@ -161,7 +161,10 @@ def get_sigma(ng_list):
         return(0*np.ones(NBINS))
     
     
+    
+#Calculation of the covariance matrix with jackknife based on cluster
 def get_cov(ng_list):
+    
     
     xi_array=ng_list[:,0,:]
     npairs_array=ng_list[:,3,:]
@@ -191,113 +194,7 @@ def get_cov(ng_list):
     else:
         return(0*np.ones(NBINS))
 
-#correlation function for one cluster with seperate source catalogs 
-def get_ng_source(clusters,sources,z_lower,z_upper,lambda_lower,lambda_upper,foreback,woRed=False):
-    clusters_z_mask=(clusters[('All','All','Z_LAMBDA')]>=z_lower)&(clusters[('All','All','Z_LAMBDA')]<=z_upper)
-    clusters_lambda_mask=(clusters[('All','All','LAMBDA_CHISQ')]>=lambda_lower)&(clusters[('All','All','LAMBDA_CHISQ')]<=lambda_upper)
-    
-    clusters_masked=clusters[(clusters_z_mask)&(clusters_lambda_mask)]
-    
-    if woRed==True:
-        sources=sources[woRedMask]
-    
-    print("The number of sources is {}".format(len(sources)))
-    
-    center_id=clusters_masked[('Alt','Alt1','ID_CENT')]
-    centers=members.loc[center_id]
-    
-    
-    UPPER_BOUND=10
-    distance=('All','angR')
 
-
-#     if mode1 == "s":
-#         def get_cluster_cen(cluster):
-#             return (get_unique_center_for_cluster(cluster))
-#         def get_cluster_sats(cluster):
-#             cen_mat_id=cluster.name
-#             cen_id=cluster[('Alt','Alt1','ID_CENT')]
-            
-
-            
-#             if source==True:
-#                 sats=members
-                
-#             else: 
-#                 sats=members[members['All','MEM_MATCH_ID']==cen_mat_id]
-                         
-#             sats=sats[sats.index!=cen_id]
-#             return (sats)
-#     elif mode1=='r':
-#         def get_cluster_sats(cluster):
-#             return(shapes)
-#         def get_cluster_cen(cluster):
-#             return (random)
-
-#     else:
-#         raise
-
-
-    cen=centers
-    sats=members
-    
-    if foreback=="back":
-        sats=sats[(sats[('All','mean_z')]-z_upper)>=0.1]
-        print("The number of background sources is {}".format(len(sats)))
-    elif foreback=="fore":
-        sats=sats[(z_lower-sats[('All','mean_z')])>=0.1]
-        print("Calculating foreground sources")
-        print(sats[('All','mean_z')].mean())
-        print("The number of foreground sources is {}".format(len(sats)))
-
-    sats_e1=sats[('All','e1')].to_numpy()
-    sats_e2=sats[('All','e2')].to_numpy()
-    sats_angr=sats[distance]
-
-#     print(sats_e1,sats_e2)
-
-    if type(cen[('All','RA')])==np.float64:
-        cen_angr=np.array(cen[distance]).reshape(1)
-        cen_ra=np.array(cen[('All','RA')]).reshape(1)
-        cen_dec=np.array(cen[('All','DEC')]).reshape(1)
-    else:
-#         cen_e1=cen[('All','e1')].to_numpy
-#         cen_e2=cen[('All','e2')].to_numpy()
-        cen_angr=cen[distance].to_numpy()
-        cen_ra=cen[('All','RA')].to_numpy()
-        cen_dec=cen[('All','DEC')].to_numpy()
-
-
-
-
-#     print(cen_e1,cen_e2)
-
-    sats_ra=sats[('All','RA')].to_numpy()
-    sats_dec=sats[('All','DEC')].to_numpy()
-
-
-
-
-#     print(np.shape(cen_ra),np.shape(cen_dec))    
-#     print(cen_ra,cen_dec)    
-
-    sats_cat = treecorr.Catalog( g1 = sats_e1, g2   = sats_e2, 
-                                 ra = sats_ra, dec = sats_dec,r=sats_angr,
-                                 ra_units='deg', dec_units='deg')
-
-    cen_cat = treecorr.Catalog( 
-                                 ra = cen_ra, dec = cen_dec, r=cen_angr,
-                                 ra_units='deg', dec_units='deg')
-    
-    MINSEP=0.1
-    BINSLOP=0.1
-        
-
-    ng = treecorr.NGCorrelation(nbins=NBINS, min_sep=MINSEP, max_sep=UPPER_BOUND, bin_slop=BINSLOP,
-                               metric="Rperp")
-    ng.process(cen_cat,sats_cat)
-
-    return(ng)
 
 def get_ng_source_ind(cluster,sources,foreback="",woRed=False):
     

@@ -3,10 +3,10 @@ import numpy as np
 import astropy as ap
 from tqdm.notebook import trange, tqdm
 import matplotlib.pyplot as plt
-import seaborn as sns
+import matplotlib
+# import seaborn as sns
 from scipy import stats
 
-sns.set()
 
 from astropy.coordinates import SkyCoord  # High-level coordinates
 from astropy.coordinates import ICRS, Galactic, FK4, FK5  # Low-level frames
@@ -40,7 +40,7 @@ elif z_range=="all_z":
 else:
     raise
     
-clusters=pd.read_pickle('/home/cz136/project/sa/data/{}/{}/clusters{}.pkl'.format(shape_cat,vol_lim,z)) 
-shapes=pd.read_pickle('/home/cz136/project/sa/data/{}/{}/shapes{}.pkl'.format(shape_cat,vol_lim,z)) 
-random=pd.read_pickle('/home/cz136/project/sa/data/{}/{}/random.pkl'.format(shape_cat,vol_lim))
-shape_BPZ=pd.read_pickle("/home/cz136/project/sa/data/shape_BPZ.pkl")
+clusters=pd.read_pickle('/global/project/projectdirs/des/zhou/sa/data/{}/{}/clusters{}.pkl'.format(shape_cat,vol_lim,z)) 
+shapes=pd.read_pickle('/global/project/projectdirs/des/zhou/sa/data/{}/{}/shapes{}.pkl'.format(shape_cat,vol_lim,z)) 
+random=pd.read_pickle('/global/project/projectdirs/des/zhou/sa/data/{}/{}/random.pkl'.format(shape_cat,vol_lim))
+shape_BPZ=pd.read_pickle("/global/project/projectdirs/des/zhou/sa/data/shape_BPZ.pkl")

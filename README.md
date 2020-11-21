@@ -91,6 +91,8 @@ The calculation of red satellite in lensing source is not right\
 Plotted the impact of satellite alignment on weak lensing mass calibration
 ### 2019.12.16
 The background and foreground catalogues are not correct. Starting to remake them.
+### 2020.6.24
+Migrate to NERSC. Change path in data_marshalling.ipynb
 
 ## Questions
 ### What is PFREE?
@@ -128,5 +130,5 @@ Shape bias is always multiplicative
 1. Test treecorr jackknife
 2. Linear regression
 3. Read DES IA paper
-4. Read SDSS IA paper
+
 
